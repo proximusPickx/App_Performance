@@ -3,7 +3,8 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testrunner.Android_Testrunner"/>
+   <!-- <class name="testrunner.Android_Testrunner"/> -->
+      <class name="testrunner.iOS_Testrunner"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

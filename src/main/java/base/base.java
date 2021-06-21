@@ -16,22 +16,6 @@ public class base {
 		prop = new Properties();
 		prop.load(fis);
 	}
-
-	public String getUsername() {
-		return prop.getProperty("username");
-	}
-
-	public String getPassword() {
-		return prop.getProperty("password");
-	}
-	
-	public String getNativeView() {
-		return prop.getProperty("native");
-	}
-
-	public String getWebView() {
-		return prop.getProperty("web");
-	}
 	
 	public String getAndroid_appName() {
 		return (String) prop.get("android_appname");
@@ -81,26 +65,6 @@ public class base {
 		return prop.getProperty("buildName");
 	}
 	
-	public String getBrowserstackUsername() {
-		return prop.getProperty("browserstackUsername");
-	}
-	
-	public String getBrowserstackAccessKey() {
-		return prop.getProperty("browserstackAccessKey");
-	}
-	
-	public String getbrowserStackdeviceName() {
-		return prop.getProperty("browserstackdevicename");
-	}
-	
-	public String getGeoLocation() {
-		return prop.getProperty("geoLocation");
-	}
-	
-	public String getLineNumber() {
-		return prop.getProperty("lineNumber");
-	}
-	
 	public String getOSname() {
 		return prop.getProperty("os");
 	}
@@ -116,5 +80,9 @@ public class base {
 	
 	public String getUdid() {
 		return prop.getProperty("udid");
+	}
+	
+	public String getbundleId() {
+		return prop.getProperty("bundleId");
 	}
 }

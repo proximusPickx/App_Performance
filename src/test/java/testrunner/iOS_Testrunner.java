@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
 		monochrome = true,
 		features={"src/test/java/iOS_feature"},
 		glue={"iOS_stepdefinations", "config"},
-				tags= "(@Home12 or ~@login)",
+				tags= "(@PerformanceTest)",
 				plugin = {
 						"summary",
 						"pretty",
