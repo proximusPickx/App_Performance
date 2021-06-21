@@ -33,13 +33,13 @@ public class Login_Page implements Login_Screen {
 
 	@When("^The user see the home page and validates the loaded home page$")
 	public void the_user_see_the_home_page_and_validates_the_loaded_home_page() throws InterruptedException {
-		commonUtils.swipeUpOverHomeScreen();
-		Assert.assertTrue(commonUtils.displayed(swimlane_title));
-		Assert.assertTrue(commonUtils.displayed(swimlane_container));
-//		Assert.assertTrue(commonUtils.displayed(liveTV_button));
-//		Assert.assertTrue(commonUtils.displayed(tvGuide_button));
-//		Assert.assertTrue(commonUtils.displayed(Recordings));
-		commonUtils.waitTillVisibility(live_icon, 8);
-		Assert.assertTrue(commonUtils.displayed(live_icon));
+		commonUtils.waitTillVisibility(Categories, 5);
+		Assert.assertTrue(commonUtils.displayed(Categories));
+//	commonUtils.swipeUpOverHomeScreen();
+	Assert.assertTrue(commonUtils.displayed(liveTV_button));
+	Assert.assertTrue(commonUtils.displayed(tvGuide_button));
+	Assert.assertTrue(commonUtils.displayed(Recordings));
+	//	commonUtils.waitTillVisibility(live_icon, 8);
+	//	Assert.assertTrue(commonUtils.displayed(live_icon));
 	}
 }

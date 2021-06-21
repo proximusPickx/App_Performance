@@ -47,7 +47,7 @@ public class Hooks extends base {
 	@Before
 	public void chooseRunningPlatform(Scenario scenario) throws IOException, InterruptedException {
 		String runningPlatform = getRunningPlatformName();
-		// String os = getOSname();
+		String os = getOSname();
 		System.out.println("runningPlatform is " + runningPlatform);
 		System.out.println("running OS is " + os);
   if (runningPlatform.equalsIgnoreCase("device")) {
@@ -60,14 +60,7 @@ public class Hooks extends base {
 		System.out.println("caps are set.............");
 		afterAppInvokes = System.currentTimeMillis();
 		System.out.println("bofore app invokes : "+ afterAppInvokes);
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
-	
-//	public void timeAfterAppInvokes() {
-//		long afterAppInvokes = System.currentTimeMillis();
-//		System.out.println("bofore app invokes : "+ afterAppInvokes);
-//		return;
-//	}
 
 	public void setBsSessionName(Scenario scenario) {
 		String sessionName = scenario.getName();
@@ -84,10 +77,6 @@ public class Hooks extends base {
 			url = new URL("http://127.0.0.1:4723/wd/hub");
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
-//			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android");
-//			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
-//			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "be.belgacom.mobile.adeleeverywhere");
-//			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "be.belgacom.mobile.adeleeverywhere.SplashActivity");
 			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, getandroid_deviceName());
 			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, getandroid_automationName());
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, getappPackage());
@@ -112,6 +101,7 @@ public class Hooks extends base {
 			capabilities.setCapability(IOSMobileCapabilityType.XCODE_ORG_ID, getxcodeOrgId());
 			capabilities.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID, getxcodeSigningId());
 			capabilities.setCapability(MobileCapabilityType.UDID, getUdid());
+			capabilities.setCapability(IOSMobileCapabilityType.BUNDLE_ID, getbundleId());
 			capabilities.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
 			capabilities.setCapability("autoAcceptAlerts", true);
 			capabilities.setCapability("autoGrantPermissions", true);
